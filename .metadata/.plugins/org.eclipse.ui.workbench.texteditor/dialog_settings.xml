@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="257" key="DIALOG_WIDTH"/>
+		<item value="389" key="DIALOG_Y_ORIGIN"/>
+		<item value="1245" key="DIALOG_X_ORIGIN"/>
+		<item value="380" key="DIALOG_HEIGHT"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="true" key="wrap"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wholeword"/>
+		<item value="FromListener" key="selection"/>
+		<list key="findhistory">
+			<item value="MyOnItemSelectedListener"/>
+			<item value="ItemSelectedListener"/>
+			<item value="to1"/>
+			<item value="from1"/>
+			<item value="rom"/>
+			<item value="switch"/>
+			<item value="switchSpinner"/>
+			<item value="setStatus"/>
+		</list>
+		<list key="replacehistory">
+			<item value="FromListener"/>
+			<item value="ToListener"/>
+			<item value="arrayTo"/>
+			<item value="arrayFrom"/>
+			<item value="name + &quot; at\n&quot;+ amount + &quot;pills\n at&quot; + time"/>
+			<item value="(name + &quot; at\n&quot;+ amount + &quot;pills\n&quot; + time)"/>
+			<item value="id ="/>
+			<item value="&quot;"/>
+		</list>
+	</section>
+</section>

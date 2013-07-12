@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">The Ultimate Unit Converter</string>
+    <string name="about">Developed and tested by Sameet Sapra\nThis program allows users to convert between metric and standard units. \n\nThis program will convert units in the following categories:\n\nTemperatures\nWeights\nLengths\nTimes\nVolumes</string>
+    <string name="temp_prompt">Choose a temperature</string>
+    <string-array name="temp_array">
+        <item>Celsius</item>
+        <item>Fahrenheit</item>
+        <item>Kelvin</item>
+    </string-array>
+    <string name="weight_prompt">Choose a weight</string>
+    <string-array name="weight_array">
+        <item>Pounds</item>
+        <item>Kilograms</item>
+        <item>Grams</item>
+        <item>Ounces</item>
+    </string-array>
+    
+    <string name="time_prompt">Choose a time</string>
+    <string-array name="time_array">
+        <item>Seconds</item>
+        <item>Minutes</item>
+        <item>Hours</item>
+    </string-array>
+    
+    <string name="length_prompt">Choose a length</string>
+    <string-array name="length_array">
+        <item>Centimeters</item>
+        <item>Inches</item>
+        <item>Feet</item>
+        <item>Yards</item>
+        <item>Meters</item>
+        <item>Kilometers</item>
+    </string-array>
+    
+    <string name="volume_prompt">Choose a volume</string>
+    <string-array name="volume_array">
+        <item>Pints</item>
+        <item>Quarts</item>
+        <item>Gallons</item>
+        <item>Fluid ounces</item>
+        <item>Milliliters</item>
+    </string-array>
+</resources>

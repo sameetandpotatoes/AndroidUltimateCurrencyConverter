@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?&rt;
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    &rt;
+
+<LinearLayout
+	android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+	   &rt;
+
+<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/btnTest" android:text="Test JSON"&rt;</Button&rt;
+<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/btnTestFile" android:text="Parse JSON file"&rt;</Button&rt;
+</LinearLayout&rt;
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/ScrollView01" android:layout_width="fill_parent" android:layout_height="wrap_content"&rt;
+
+<TextView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text=""
+    android:layout_gravity="center_horizontal"
+    android:id="@+id/txtStatus"
+    android:isScrollContainer="true"/&rt;
+
+</ScrollView&rt;
+</LinearLayout&rt;

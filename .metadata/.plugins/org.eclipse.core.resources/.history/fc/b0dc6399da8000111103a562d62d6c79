@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal"
+    android:id="@+id/secondary_finished" >
+    
+    <TabHost
+        android:id="@+id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+	 	
+	 	<TabWidget
+			android:id="@android:id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+		
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="viewDetails" >
+
+                <LinearLayout
+                    android:id="@+id/Sunday"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" > 	
+                </LinearLayout>
+				
+				<LinearLayout
+                    android:id="@+id/Monday"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="viewDetails" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Tuesday"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="viewDetails" >
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:id="@+id/Wednesday"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="viewDetails" >
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:id="@+id/Thursday"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="viewDetails" >
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:id="@+id/Friday"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="viewDetails" >
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:id="@+id/Saturday"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="viewDetails" >
+                </LinearLayout>
+            </FrameLayout>
+		</TabHost>
+
+    <TextView
+        android:id="@+id/digitalClock1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:gravity="bottom"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/digitalClock1"
+        android:text="Countdown until next medication: "
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <GridView
+        android:id="@+id/gridView1"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:horizontalSpacing="20dp"
+        android:verticalSpacing="15dp"
+        android:layout_marginTop="54dp"
+        android:numColumns="7" >
+    </GridView>
+	
+    <RelativeLayout
+        android:layout_width="fill_parent"
+   		android:layout_height="fill_parent"
+    	android:orientation="horizontal" >
+    </RelativeLayout>
+    <Button
+        android:id="@+id/newMed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="37dp"
+        android:layout_toLeftOf="@+id/textView1"
+        android:onClick="viewDetails"
+        android:text="Add new medication" />
+</RelativeLayout>

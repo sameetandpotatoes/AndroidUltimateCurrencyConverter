@@ -1,0 +1,203 @@
+package com.sapra.unitconverter;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+import android.preference.PreferenceManager;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
+
+public class Temperature extends Activity
+{
+	private EditText text;
+	private Toast toast;
+	public void onCreate(Bundle savedInstanceState)
+	{
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.temp);
+		text = (EditText) findViewById(R.id.editText1);
+		
+		Spinner from = (Spinner) findViewById(R.id.fromSpinner);
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.temp_array, android.R.layout.simple_spinner_item);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		from.setAdapter(adapter);
+		from.setOnItemSelectedListener(new MyOnItemSelectedListener());
+		
+		Spinner to = (Spinner) findViewById(R.id.toSpinner);
+		ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this, R.array.temp_array, android.R.layout.simple_spinner_item);
+		adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		to.setAdapter(adapter1);
+		to.setOnItemSelectedListener(new ItemSelectedListener());
+	}
+	public void myClickHandler(View view)
+	{
+		switch (view.getId())
+		{
+		case R.id.button:
+			boolean errorMessage = false; float inputValue = 0;
+			try
+			{
+				inputValue = Float.parseFloat(text.getText().toString());
+			}
+			catch (NumberFormatException e) {errorMessage = true;}
+			if (errorMessage || text.getText().toString().length() == 0)
+			{
+				Toast.makeText(this, "Please enter a valid number", Toast.LENGTH_LONG).show(); return;
+			}
+			
+			Button display = (Button) findViewById(R.id.ans);
+			display.setEnabled(true);
+			
+			SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+			boolean fraction = sharedPrefs.getBoolean("checkboxPref", true);
+			
+			if (from.equals(to))
+			{
+				String sameInput;
+				if (from.equals("Kelvin")) sameInput = inputValue + " " + "K";
+				else if (from.equals("Celsius")) sameInput = inputValue + " °C";
+				else sameInput = inputValue  + " °F";
+				display.setText(sameInput);
+			}
+			else
+			{
+				if (from.equals("Fahrenheit"))
+				{
+					if (to.equals("Celsius"))
+					{
+						if (fraction) display.setText(decimalToFraction(convertFahrenheitToCelsius(inputValue)) + " °C");
+						else display.setText(convertFahrenheitToCelsius(inputValue) + " °C");
+					}
+					else
+					{
+						if (fraction) display.setText(decimalToFraction(convertFahrenheitToKelvin(inputValue)) + " K");
+						else display.setText(convertFahrenheitToKelvin(inputValue) + " K");
+					}
+				}	
+				else if(from.equals("Celsius"))
+				{
+					if (to.equals("Fahrenheit"))
+					{
+						if (fraction) display.setText(decimalToFraction(convertCelsiusToFahrenheit(inputValue)) + " °F");
+						else display.setText(convertCelsiusToFahrenheit(inputValue) + " °F");
+					}
+					else
+					{
+						if (fraction) display.setText(decimalToFraction(convertFahrenheitToKelvin(convertCelsiusToFahrenheit(inputValue))) + " K");
+						else display.setText(convertFahrenheitToKelvin(convertCelsiusToFahrenheit(inputValue)) + " K");
+					}
+				}
+				else
+				{
+					if (to.equals("Celsius"))
+					{
+						if (fraction) display.setText(decimalToFraction(convertFahrenheitToCelsius(convertKelvinToFahrenheit(inputValue))) + " °C");
+						else display.setText(convertFahrenheitToCelsius(convertKelvinToFahrenheit(inputValue)) + " °C");
+					}
+					else
+					{
+						if (fraction) display.setText(decimalToFraction(convertKelvinToFahrenheit(inputValue)) + " °F");
+						display.setText(convertKelvinToFahrenheit(inputValue) + " °F");
+					}
+				}
+			}
+			break;
+		}	
+	}
+		private float checkDecimal(String ans)
+		{
+			boolean display = false;
+			for (int i = 0; i < ans.length() - 1; i++) if (ans.substring(i, i + 1).equals("E")) display = true;
+			if (!display && ans.length() > 8) return Float.parseFloat(ans.substring(0, 7));
+			else if (!display) return Float.parseFloat(ans);
+			return Float.parseFloat(ans);
+		}
+		private float convertFahrenheitToCelsius(float fahrenheit)
+		{
+			String ans = Float.toString(((fahrenheit - 32) * 5 / 9));
+			return checkDecimal(ans);
+		}	
+		private float convertCelsiusToFahrenheit(float celsius)
+		{
+			
+			String ans = Float.toString(((celsius * 9) / 5) + 32);
+			return checkDecimal(ans);
+		}
+		private float convertFahrenheitToKelvin(float fahrenheit)
+		{
+			String ans = Float.toString((float) ((fahrenheit -32) / (1.8) + 273.15));
+			return checkDecimal(ans);
+		}
+		private float convertKelvinToFahrenheit(float input)
+		{
+			return (checkDecimal(Float.toString((float) (((input - 273.15) * 1.8) + 32))));
+		}
+		private String decimalToFraction(float decimal)
+		{
+			int LIMIT = 12;
+	        int denominators[] = new int[LIMIT + 1];
+	        int numerator, denominator, temp;
+	        int MAX_GOODNESS = 100;
+	        ArrayList<String> str = new ArrayList<String>();
+	        int i = 0;
+	        while (i < LIMIT + 1)
+	        {
+	            denominators[i] = (int)decimal;
+	            decimal = (float) (1.0 / (decimal - denominators[i]));
+	            i++;
+	        }
+	        int last = 0;
+	        while (last < LIMIT)
+	        {         	  
+	            numerator = 1;
+	            denominator = 1;
+	            temp = 0;
+	            int current = last;
+	            while (current >= 0) {
+	                denominator = numerator;
+	                numerator = (numerator * denominators[current]) + temp;
+	                temp = denominator;
+	                current = current - 1;
+	            }
+	            last++;
+	                       
+	            int goodness = denominators[last];
+	            str.add((int)numerator + "/" + (int)denominator);                               
+	            if (Math.abs(goodness) > MAX_GOODNESS) break;
+	        }   
+	        return str.get(last - 1);
+		}
+		public class MyOnItemSelectedListener implements OnItemSelectedListener
+		{
+
+		    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id)
+		    {
+		    	from = parent.getItemAtPosition(pos).toString();
+		    }
+		    public void onNothingSelected(AdapterView parent)
+		    {
+		      // Do nothing.
+		    }
+		}
+		public class ItemSelectedListener implements OnItemSelectedListener
+		{
+			public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3)
+			{
+				to = arg0.getItemAtPosition(arg2).toString();
+			}
+			public void onNothingSelected(AdapterView<?> arg0)
+			{
+				
+			}
+		}
+		public String from;
+		public String to;
+}

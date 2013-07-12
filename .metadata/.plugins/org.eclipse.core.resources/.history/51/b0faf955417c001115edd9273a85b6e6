@@ -1,0 +1,20 @@
+package com.sapra.calendar;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.Button;
+
+public class CalendarActivity extends Activity
+{
+    public void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        
+        Button continueCalendar = (Button) findViewById(R.id.continueCalendar);
+        Button newCalendar = (Button) findViewById(R.id.newCalendar);
+        
+        
+        
+    }
+}

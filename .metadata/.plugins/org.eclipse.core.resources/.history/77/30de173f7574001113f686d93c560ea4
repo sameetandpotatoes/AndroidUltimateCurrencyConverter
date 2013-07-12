@@ -1,0 +1,51 @@
+package com.sapra.example;
+
+import org.json.*;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class JSONExampleActivity extends Activity
+{
+    /** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        
+        Button test = (Button) findViewById(R.id.btnTest);
+        test.setOnClickListener(new OnClickListener()
+		{
+			public void onClick(View v)
+			{
+				 buildObject();	  
+			}
+		});
+    }
+    String staticObject = "{\"firstname\":\"Steve\",\"lastname\":\"Jobs\",\"cellphones\":\"0\"}";
+
+    void buildObject()
+    {
+    	try
+    	{
+    		JSONObject obj = new JSONObject(staticObject);
+    		String x = obj.get("firstname").toString() + " " + obj.get("lastname").toString() + " has " + obj.getInt("cellphones") + " Android phones.";
+    		setStatus(x);
+    	}
+    	catch (JSONException je)
+    	{
+    		setStatus("Error occured " + je.getMessage());
+    	}
+    }
+    void setStatus(String x)
+    {
+    	TextView tv = (TextView) findViewById(R.id.txtStatus);
+    	tv.setText(x);
+    }
+}

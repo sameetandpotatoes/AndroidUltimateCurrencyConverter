@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+     <EditText
+        android:id="@+id/et"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:background="@android:drawable/editbox_background" />
+
+     <RadioButton
+         android:id="@+id/F"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Fahrenheit to Celcius" />
+
+     <RadioButton
+         android:id="@+id/C"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Celsius to Fahrenheit" />
+
+     <Button
+         android:id="@+id/Calculate"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Calculate"
+         
+     <TextView
+         android:id="@+id/tv"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:text="" />
+
+</LinearLayout>

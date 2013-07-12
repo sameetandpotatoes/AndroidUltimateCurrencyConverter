@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 6 elements to &apos;layout-land&apos;&#x0D;&#x0A;- Original project: &apos;TheUltimateUnitConverter&apos;&#x0D;&#x0A;- Destination element: &apos;layout-land&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     time.xml&#x0D;&#x0A;     weight.xml&#x0D;&#x0A;     length.xml&#x0D;&#x0A;     about.xml&#x0D;&#x0A;     temp.xml&#x0D;&#x0A;     welcome.xml" description="Copy files" element1="res/layout/time.xml" element2="res/layout/weight.xml" element3="res/layout/length.xml" element4="res/layout/about.xml" element5="res/layout/temp.xml" element6="res/layout/welcome.xml" files="6" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1329343074407" target="/TheUltimateUnitConverter/res/layout-land" units="0" version="1.0"/>
+</session>

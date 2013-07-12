@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Ultimate Collection of Minigames</string>
+    <string name="diff_prompt">Choose a computer difficulty</string>
+	<string-array name="difficulty_array">
+        <item>Easy</item>
+        <item>Medium</item>
+        <item>Hard</item>
+	</string-array>  
+	<string name="piece_prompt">Choose a piece</string>      
+	<string-array name="piece_array">
+        <item>X</item>
+        <item>O</item>
+	</string-array>     
+</resources>

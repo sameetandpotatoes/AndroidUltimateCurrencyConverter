@@ -1,0 +1,93 @@
+package com.sapra.unitconverter;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.TextView;
+
+public class UnitsConverterActivity extends Activity
+{
+    /** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        
+        //This is the TextView you set in your layout. It will display the temperature.
+        final TextView tv = (TextView) findViewById(R.id.tv);
+
+        // This sets up the EditText so you can capture the input and return the temperature.
+        final EditText edittext = (EditText) findViewById(R.id.et);
+        final RadioButton C = (RadioButton) findViewById(R.id.C);
+        final RadioButton F = (RadioButton) findViewById(R.id.F);
+        C.setOnClickListener(new View.OnClickListener()
+        {
+			public void onClick(View v)
+			{
+				float c = Float.parseFloat(edittext.getText().toString());
+                tv.setText("Fahrenheit temperature is " + String.valueOf(convertCelciusToFahrenheit(c)));
+			}
+		});
+        F.setOnClickListener(new View.OnClickListener()
+        {
+			public void onClick(View v)
+			{
+				float f = Float.parseFloat(edittext.getText().toString());
+                tv.setText("Celsius Temperature is " + String.valueOf(convertFahrenheitToCelcius(f)));
+			}
+		});
+        
+        
+     /*   edittext.setOnKeyListener(new View.OnKeyListener()
+        {
+            public boolean onKey(View v, int keyCode, KeyEvent event)
+            {
+                // If the event is a key-down event on the "enter" button
+                /*if ((event.getAction() == KeyEvent.ACTION_DOWN)
+                        && (keyCode == KeyEvent.KEYCODE_ENTER))
+                {
+                    // Perform action on key press
+                    float f = Float.parseFloat(edittext.getText().toString());
+                    tv.setText(String.valueOf(convertCelciusToFahrenheit(f)));
+                    return true;
+                }
+            	if (C.isPressed())
+            	{
+            		float c = Float.parseFloat(edittext.getText().toString());
+                    tv.setText(String.valueOf(convertCelciusToFahrenheit(c)));
+                    return true;
+            	}
+            	if (F.isPressed())
+            	{
+            		float f = Float.parseFloat(edittext.getText().toString());
+                    tv.setText(String.valueOf(convertFahrenheitToCelcius(f)));
+                    return true;
+            	}
+                return false;
+            }
+        });*/
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.mainmenu, menu);
+        return true;
+    }
+    // Converts to celcius
+    private float convertFahrenheitToCelcius(float fahrenheit) {
+        return ((fahrenheit - 32) * 5 / 9);
+    }
+
+    // Converts to fahrenheit
+    private float convertCelciusToFahrenheit(float celsius) {
+        return ((celsius * 9) / 5) + 32;
+    }
+
+}

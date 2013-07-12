@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Converter</string>
+	<string name="F">Fahrenheit to Celsius</string>
+	<string name="C">Celcius to Fahrenheit</string>
+	<string name="I">Inches to Centimeters </string>
+	<string name="Cm">Centimeters to Inches</string>
+	
+</resources>

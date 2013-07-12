@@ -1,0 +1,38 @@
+package com.sapra.calendar;
+
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+
+public class CalendarActivity extends Activity
+{
+    public void onCreate(Bundle savedInstanceState)
+    {
+    	//May not need this class and main.xml.
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        
+        Button continueCalendar = (Button) findViewById(R.id.continueCalendar);
+        Button newCalendar = (Button) findViewById(R.id.newCalendar);
+        continueCalendar.setOnClickListener(new OnClickListener()
+		{
+			public void onClick(View v)
+			{
+				 Intent intent = new Intent(CalendarActivity.this, ViewCalendar.class);
+				 startActivity(intent);		  
+			}
+		});
+        newCalendar.setOnClickListener(new OnClickListener()
+		{
+			public void onClick(View v)
+			{
+				 Intent intent = new Intent(CalendarActivity.this, ViewCalendar.class);
+				 startActivity(intent);		  
+			}
+		});
+    }
+}

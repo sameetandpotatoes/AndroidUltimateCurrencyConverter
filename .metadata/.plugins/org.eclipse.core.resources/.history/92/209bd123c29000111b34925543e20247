@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter your currency amount here:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal|numberSigned" >
+        <requestFocus />
+    </EditText>
+	
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="From"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <Spinner
+    	android:id="@+id/fromSpinner"
+   	 	android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/currency_prompt" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="to"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+	 
+	 <Spinner
+        android:id="@+id/toSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/currency_prompt"    />
+
+	 <RelativeLayout
+	     android:id="@+id/relativeLayout1"
+	     android:layout_width="match_parent"
+	     android:layout_height="wrap_content" >
+
+	     <Button
+	         android:id="@+id/button"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:onClick="myClickHandler"
+	         android:text="Calculate"
+	         android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	     <Button
+	         android:id="@+id/button1"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_alignParentTop="true"
+	         android:layout_centerHorizontal="true"
+	         android:onClick="switchSpinners"
+	         android:text="Switch" />
+
+	     <Button
+	         android:id="@+id/imageButtonSelector"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_alignParentRight="true"
+	         android:layout_alignParentTop="true"
+	         android:layout_marginRight="133dp"
+	         android:background="@drawable/drawable" />
+
+	 </RelativeLayout>
+
+	<Button
+        android:id="@+id/ans"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:clickable="false"
+        android:text="Answer will be displayed here."
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	<TextView
+	    android:id="@+id/textView4"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center"
+	    android:textAppearance="?android:attr/textAppearanceMedium"
+	    android:text="" />
+
+	<TextView
+	    android:id="@+id/textView5"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center"
+	    android:text="Favorite Conversions:"
+	    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+	<Button
+	    android:id="@+id/button2"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="" />
+
+</LinearLayout>

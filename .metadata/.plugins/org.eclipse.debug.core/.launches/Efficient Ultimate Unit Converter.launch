@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="net.rim.ajde.launch.blackBerryAndroidApplication">
+<intAttribute key="com.android.ide.eclipse.adt.action" value="0"/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/Efficient Ultimate Unit Converter"/>
+<listEntry value="/Efficient Ultimate Unit Converter/AndroidManifest.xml"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+<listEntry value="1"/>
+</listAttribute>
+<booleanAttribute key="org.eclipse.jdt.launching.ALLOW_TERMINATE" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Efficient Ultimate Unit Converter"/>
+</launchConfiguration>

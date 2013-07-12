@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:id="@+id/secondary_finished"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/digitalClock1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:gravity="bottom"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <TabHost
+            android:id="@+id/tabhost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="1024dp"
+                android:layout_height="wrap_content" >
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/SundayTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="viewDetails" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/MondayTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="viewDetails" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/TuesdayTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="viewDetails" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/WednesdayTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="viewDetails" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ThursdayTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="viewDetails" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/FridayTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="viewDetails" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/SaturdayTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="viewDetails" >
+                </LinearLayout>
+            </FrameLayout>
+        </TabHost>
+
+        <GridView
+            android:id="@+id/Sunday"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/tabhost" >
+        </GridView>
+        <GridView
+            android:id="@+id/Monday"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/Sunday"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/tabhost" >
+        </GridView>
+        <GridView
+            android:id="@+id/Tuesday"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/Monday"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/tabhost" >
+        </GridView>
+        <GridView
+            android:id="@+id/Wednesday"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/newMed"
+            android:layout_below="@+id/tabhost"
+            android:layout_toRightOf="@+id/Tuesday" >
+        </GridView>
+        <GridView
+            android:id="@+id/Thursday"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/newMed"
+            android:layout_below="@+id/tabhost"
+            android:layout_toRightOf="@+id/Wednesday" >
+        </GridView>
+        <GridView
+            android:id="@+id/Friday"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView1"
+            android:layout_below="@+id/tabhost"
+            android:layout_toRightOf="@+id/Thursday" >
+
+        </GridView>
+
+        <GridView
+            android:id="@+id/Saturday"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView1"
+            android:layout_below="@+id/tabhost"
+            android:layout_toRightOf="@+id/Friday" >
+        </GridView>
+        <Button
+            android:id="@+id/newMed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="viewDetails"
+            android:text="Add new medication" />
+
+    </RelativeLayout>
+    
+</LinearLayout>
+

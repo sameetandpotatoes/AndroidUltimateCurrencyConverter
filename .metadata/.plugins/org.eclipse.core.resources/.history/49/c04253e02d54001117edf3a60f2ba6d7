@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/temp" android:visible="true" android:enabled="true" android:title="Temperature Converter"></item>
+    <item android:id="@+id/weight" android:visible="true" android:enabled="true" android:title="Weight Converter"></item>
+    <item android:id="@+id/length" android:visible="true" android:enabled="true" android:title="Length Converter"></item>
+    <item android:id="@+id/time" android:visible="true" android:enabled="true" android:title="Time Converter"></item>
+    <item android:id="@+id/about" android:visible="true" android:enabled="true" android:title="About"></item>
+    
+</menu>

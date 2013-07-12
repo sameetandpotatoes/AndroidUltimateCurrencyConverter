@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="net.rim.ajde.launch.blackBerryAndroidApplication">
+<stringAttribute key="DeviceIP" value="192.168.1.83"/>
+<intAttribute key="com.android.ide.eclipse.adt.action" value="0"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="CurrencyConverter"/>
+</launchConfiguration>
